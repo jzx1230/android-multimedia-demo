@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context=".artvc.ARTVCActivity">
+
+    <TextView
+        android:id="@+id/id_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="uid:"/>
+    <TextView
+        android:id="@+id/id_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/id_label"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/id_label">
+
+        <Button
+            android:id="@+id/create_room_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="create"/>
+
+        <Button
+            android:id="@+id/join_room_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="join"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/roomId_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="roomId:"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linearLayout_1"/>
+
+    <EditText
+        android:id="@+id/roomId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linearLayout_1"
+        android:layout_toRightOf="@+id/roomId_label"
+        />
+
+    <TextView
+        android:id="@+id/rtoken_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rtoken:"
+        android:textSize="20sp"
+        android:layout_below="@+id/roomId"/>
+
+    <EditText
+        android:id="@+id/rtoken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/roomId"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/rtoken_label"/>
+
+
+</RelativeLayout>

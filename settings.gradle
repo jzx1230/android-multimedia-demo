@@ -1,0 +1,2 @@
+include ':multimedia-build'
+project(':multimedia-build').projectDir = new File('app')

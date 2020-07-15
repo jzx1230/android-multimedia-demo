@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.mpaas.demo.multimedia"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilter 'armeabi'
+        }
+    }
+    signingConfigs {
+        release {
+            keyAlias 'mpaas123'
+            keyPassword 'mpaas123'
+            storeFile file('mpaas_keystore.jks')
+            storePassword 'mpaas123'
+        }
+        debug {
+            keyAlias 'mpaas123'
+            keyPassword 'mpaas123'
+            storeFile file('mpaas_keystore.jks')
+            storePassword 'mpaas123'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+
+    packagingOptions {
+        exclude 'builddef.lst'
+        exclude 'AndroidManifest.xml'
+        exclude 'META-INF/*'
+    }
+
+
+
+}
+
+uploadArchives {
+    repositories {
+        mavenLocal()
+    }
+}
+apply plugin: 'com.alipay.apollo.baseline.config'
+
+dependencies {
+    implementation platform("com.mpaas.android:$mpaas_artifact:$mpaas_baseline")
+    implementation 'com.mpaas.android:artvc'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+}
